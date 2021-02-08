@@ -31,6 +31,8 @@ use OwenVoke\GHAInteractions\Concerns\InteractsWithGitHubActionsAnnotations;
 
 class MyCommand extends Command
 {
+    use InteractsWithGitHubActionsAnnotations;
+
     protected $signature = 'test';
 
     public function handle()
