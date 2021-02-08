@@ -48,7 +48,7 @@ trait InteractsWithGitHubActionsAnnotations
         $this->output->writeln([
             "::group::{$groupTitle}",
             ...$messages,
-            "::endgroup::",
+            '::endgroup::',
         ]);
     }
 
