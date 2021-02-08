@@ -1,0 +1,37 @@
+{
+    "name": "owenvoke/gha-interactions",
+    "type": "library",
+    "description": "A package for helper methods to interact with GitHub Actions",
+    "license": "MIT",
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.0",
+        "phpstan/phpstan": "^0.12.71",
+        "symfony/var-dumper": "^5.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "OwenVoke\\GHAInteractions\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OwenVoke\\GHAInteractions\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test:types": "phpstan analyse --ansi --memory-limit=0",
+        "test:unit": "pest --colors=always",
+        "test": [
+            "@test:types",
+            "@test:unit"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
