@@ -35,14 +35,14 @@ class MyCommand extends Command
 
     public function handle()
     {
-        // Add a warning message to the GitHub Actions log output
-        $this->addGitHubActionsWarningMessage('Warning!');
+        // Add a debug message to the GitHub Actions log output
+        $this->addGitHubActionsDebugMessage('Debug');
 
         // Add an error message to the GitHub Actions log output
         $this->addGitHubActionsErrorMessage('Error!');
 
-        // Add a debug message to the GitHub Actions log output
-        $this->addGitHubActionsDebugMessage('Debug');
+        // Add a warning message to the GitHub Actions log output
+        $this->addGitHubActionsWarningMessage('Warning!');
 
         // Add a group of messages to the GitHub Actions log output
         $this->addGitHubActionsGroupedLogMessage('Group Title', ['Message 1', 'Message 2']);
