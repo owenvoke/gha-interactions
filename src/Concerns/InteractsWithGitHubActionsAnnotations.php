@@ -8,28 +8,24 @@ use RuntimeException;
 
 trait InteractsWithGitHubActionsAnnotations
 {
-    public const GH_LOG_TYPE_DEBUG = 'debug';
-    public const GH_LOG_TYPE_ERROR = 'error';
-    public const GH_LOG_TYPE_WARNING = 'warning';
-
     protected function addGitHubActionsDebugMessage(string $message): void
     {
         $this->output->writeln(
-            $this->buildAnnotation(self::GH_LOG_TYPE_DEBUG, $message)
+            $this->buildAnnotation('debug', $message)
         );
     }
 
     protected function addGitHubActionsErrorMessage(string $message, string $file = null, int $line = null): void
     {
         $this->output->writeln(
-            $this->buildAnnotation(self::GH_LOG_TYPE_ERROR, $message, $file, $line)
+            $this->buildAnnotation('error', $message, $file, $line)
         );
     }
 
     protected function addGitHubActionsWarningMessage(string $message, string $file = null, int $line = null): void
     {
         $this->output->writeln(
-            $this->buildAnnotation(self::GH_LOG_TYPE_WARNING, $message, $file, $line)
+            $this->buildAnnotation('warning', $message, $file, $line)
         );
     }
 
@@ -52,7 +48,7 @@ trait InteractsWithGitHubActionsAnnotations
 
     private function buildAnnotation(string $type, string $message, string $file = null, int $line = null): string
     {
-        if (! in_array($type, [self::GH_LOG_TYPE_DEBUG, self::GH_LOG_TYPE_ERROR, self::GH_LOG_TYPE_WARNING])) {
+        if (! in_array($type, ['debug', 'error', 'warning'])) {
             throw new RuntimeException('An invalid GitHub Actions annotation type was provided');
         }
 
