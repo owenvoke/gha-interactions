@@ -27,7 +27,7 @@ In your Laravel Zero command:
 namespace App\Commands;
 
 use LaravelZero\Framework\Commands\Command;
-use OwenVoke\GHAInteractions\InteractsWithGitHubActionsAnnotations;
+use OwenVoke\GHAInteractions\Concerns\InteractsWithGitHubActionsAnnotations;
 
 class MyCommand extends Command
 {
